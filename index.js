@@ -60,6 +60,8 @@ function playSound(keyPressed) {
        }
 }
 
+// Funtion for button animation 
+
 function buttonAnimation (currentKey) {
     document.querySelector('.' + currentKey).classList.add("pressed"); 
     setTimeout(function() {
