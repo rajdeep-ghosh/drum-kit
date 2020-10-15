@@ -2,6 +2,7 @@
 
 document.addEventListener("keydown", function (event) {
     playSound(event.key);
+    buttonAnimation(event.key);
 }); 
 
 // Detecting button clicks 
@@ -12,6 +13,7 @@ for (var i=0; i<numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
        var buttonContent = this.textContent;
        playSound(buttonContent);
+       buttonAnimation(buttonContent);
     });
 }
 
@@ -56,4 +58,11 @@ function playSound(keyPressed) {
         default:
             console.log(keyPressed);
        }
+}
+
+function buttonAnimation (currentKey) {
+    document.querySelector('.' + currentKey).classList.add("pressed"); 
+    setTimeout(function() {
+        document.querySelector('.' + currentKey).classList.remove("pressed");
+    }, 100);    
 }
