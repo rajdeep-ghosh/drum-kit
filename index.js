@@ -1,8 +1,8 @@
 // Detecting keyboard press 
 
 document.addEventListener("keydown", function (event) {
-    playSound(event.key);
-    buttonAnimation(event.key);
+    playSound((event.key).toLowerCase());
+    buttonAnimation((event.key).toLowerCase());
 }); 
 
 // Detecting button clicks 
@@ -25,6 +25,7 @@ function playSound(keyPressed) {
             var tom_1 = new Audio('sounds/tom-1.mp3');
             tom_1.play();
             break;
+        
         case "a":
             var tom_2 = new Audio('sounds/tom-2.mp3');
             tom_2.play();
